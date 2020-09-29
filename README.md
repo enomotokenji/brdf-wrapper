@@ -1,4 +1,9 @@
-# brdf-wrapper
+# BRDF Python wrapper
+This is a Python wrapper of [rgl_epfl/brdf-loader](https://github.com/rgl-epfl/brdf-loader) for extracting the BRDF with Python.  
+
+## Links
+* Paper: [An Adaptive Parameterization for Efficient Material Acquisition and Rendering](https://rgl.epfl.ch/publications/Dupuy2018Adaptive)  
+* [BRDF database](http://rgl.epfl.ch/materials)
 
 ## Usage
 ### Docker
