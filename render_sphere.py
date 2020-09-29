@@ -67,8 +67,7 @@ def main(brdf_dir, obj_file, obj_range, N_map_file, mask_file, L_file, out_dir, 
                 fname = '{:03d}.png'.format(i + 1)
                 fnames.append(fname)
                 img = img * np.iinfo(np.uint16).max
-                img = img[..., ::-1]
-                cv2.imwrite(os.path.join(out_path, fname), img.astype(np.uint16))
+                cv2.imwrite(os.path.join(out_path, fname), img[..., ::-1].astype(np.uint16))
         with open(os.path.join(out_path, 'filenames.txt'), 'w') as f:
             f.write('\n'.join(fnames))
         np.save(os.path.join(out_path, 'normal_gt.npy'), N_map)
@@ -80,15 +79,15 @@ def main(brdf_dir, obj_file, obj_range, N_map_file, mask_file, L_file, out_dir, 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--brdf_dir', type=str)
-    parser.add_argument('--obj_file', type=str)
-    parser.add_argument('--obj_range', type=int, nargs=2)
-    parser.add_argument('--N_map_file', type=str)
-    parser.add_argument('--mask_file', type=str)
-    parser.add_argument('--L_file', type=str)
-    parser.add_argument('--out_dir', type=str)
+    parser.add_argument('--brdf_dir', type=str, required=True)
+    parser.add_argument('--obj_file', type=str, required=True)
+    parser.add_argument('--obj_range', type=int, nargs=2, required=True)
+    parser.add_argument('--N_map_file', type=str, required=True)
+    parser.add_argument('--mask_file', type=str, required=True)
+    parser.add_argument('--L_file', type=str, required=True)
+    parser.add_argument('--out_dir', type=str, required=True)
     parser.add_argument('--save_npy', action='store_true')
-    parser.add_argument('--n_jobs', type=int)
+    parser.add_argument('--n_jobs', type=int, default=1)
     args = parser.parse_args()
 
     main(brdf_dir=args.brdf_dir,
