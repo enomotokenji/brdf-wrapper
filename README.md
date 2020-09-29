@@ -4,6 +4,7 @@ This is a Python wrapper of [rgl_epfl/brdf-loader](https://github.com/rgl-epfl/b
 ## Links
 * Paper: [An Adaptive Parameterization for Efficient Material Acquisition and Rendering](https://rgl.epfl.ch/publications/Dupuy2018Adaptive)  
 * [BRDF database](http://rgl.epfl.ch/materials)
+* [Rendering examples](https://drive.google.com/drive/folders/11wQD_GBHdJNCuXQCE3mx6xfeQcGwRMMv?usp=sharing)
 
 ## Usage
 ### Docker
